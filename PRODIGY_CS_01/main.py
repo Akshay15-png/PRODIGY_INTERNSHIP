@@ -1,5 +1,5 @@
 from tkinter import *
-from PIL import Image,ImageTk
+from PIL import Image,ImageTk 
 
 class Myapp:
     def __init__(self, root):
