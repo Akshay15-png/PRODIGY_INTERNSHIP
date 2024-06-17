@@ -81,7 +81,7 @@ class Myapp:
             shift_value = int(shift_value)
         except ValueError:
             self.output_text.delete("1.0", END)
-            self.output_text.insert(END, "Invalid shift value")
+            self.output_text.insert(END, "Invalid shift value.")
             return
         
         decrypted_text = self.caesar_cipher(input_text_content, shift_value, mode='decrypt')
