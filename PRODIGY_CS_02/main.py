@@ -34,7 +34,6 @@ class Myapp:
             except Exception as e:
                 print(f"Error loading image: {e}")
 
-                
 if __name__ == "__main__":
     root=Tk()
     root.minsize(400,400)
