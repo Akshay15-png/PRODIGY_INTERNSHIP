@@ -23,3 +23,7 @@ Key Features:
 - Output Display
 - Resizable Window
 - Graceful Exit
+
+## Image
+
+![Screenshot (79)](https://github.com/Akshay15-png/PRODIGY_INTERNSHIP/assets/93660973/dbe61111-b0e0-4c24-a8d5-ecb5d4c4d7d1)
