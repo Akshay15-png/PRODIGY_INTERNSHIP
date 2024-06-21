@@ -12,9 +12,12 @@ During the internship at Prodigy Infotech, I had the opportunity to tackle sever
 
 ### 1. Text Encryption Tool
 
-#### Description: Developed a text encryption and decryption application using Python and Tkinter, supporting encryption method Caesar Cipher.
+#### Description
+Developed a text encryption and decryption application using Python and Tkinter, supporting encryption method Caesar Cipher.
 
-#### Technologies Used: Python, Tkinter
+#### Technologies Used
+- Python
+- Tkinter
 
 #### Key Features:
 - Graphical User Interface (GUI)
