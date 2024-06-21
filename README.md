@@ -10,7 +10,7 @@ Intern Name: Akshay Katoch
 ## Overview
 During the internship at Prodigy Infotech, I had the opportunity to tackle several engaging projects that honed my skills in cybersecurity and software development. Below, I outline the key projects I contributed to during my tenure:
 
-### 1. File Encryption System
+### 1. Text Encryption Software
 
 Description: Developed a text encryption and decryption application using Python and Tkinter, supporting encryption method Caesar Cipher.
 
@@ -27,3 +27,5 @@ Key Features:
 ## Image
 
 ![Screenshot (79)](https://github.com/Akshay15-png/PRODIGY_INTERNSHIP/assets/93660973/dbe61111-b0e0-4c24-a8d5-ecb5d4c4d7d1)
+
+### 2. Image Encryption Software
