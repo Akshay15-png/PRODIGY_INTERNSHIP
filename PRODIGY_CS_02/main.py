@@ -11,6 +11,11 @@ class MyApp:
         try:
             self.root = root
             self.root.title("Encrypt or Decrypt Image")
+            
+             # logo icon
+            logo_image = Image.open("PRODIGY_CS_02\logo1.png")
+            logo = ImageTk.PhotoImage(logo_image)
+            root.iconphoto(True, logo)
 
             # choose file
             self.label1 = Label(text="Image: ", font="Morpheus 10")
