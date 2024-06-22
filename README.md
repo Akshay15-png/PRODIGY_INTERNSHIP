@@ -52,3 +52,4 @@ This project is an image encryption tool developed as part of Task 02 assigned b
 
 ### Image
 
+![Screenshot (80)](https://github.com/Akshay15-png/PRODIGY_INTERNSHIP/assets/93660973/d6d10042-5e43-4227-a4a0-d7ec44428210)
