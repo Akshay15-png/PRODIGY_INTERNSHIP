@@ -11,9 +11,9 @@ class MyApp:
         try:
             self.root = root
             self.root.title("Encrypt or Decrypt Image")
-            
-             # logo icon
-            logo_image = Image.open("PRODIGY_CS_02\logo1.png")
+
+            # logo icon
+            logo_image = Image.open("PRODIGY_CS_02/logo1.png")
             logo = ImageTk.PhotoImage(logo_image)
             root.iconphoto(True, logo)
 
@@ -35,18 +35,19 @@ class MyApp:
             self.decrypt_button = Button(text="Decrypt", font="Morpheus 10", bg="#57B763", command=self.decrypt_image)
             self.decrypt_button.grid(row=3, column=2, padx=30, pady=10, sticky="e")
 
-            # variables to store image path and location
             self.image_path = None
             self.location_path = None
-
+            self.full_save_path = None
+            self.swaps = []
+            
         except Exception as e:
-            print(f"Something Wrong: {e}")
+            print(f"Something went wrong: {e}")
 
     def show_image(self):
         self.image_path = filedialog.askopenfilename(filetypes=[("Image files", "*.jpg;*.jpeg;*.png;*.bmp;*.gif")])
         if self.image_path:
             try:
-                self.get_image = Image.open(self.image_path)
+                self.get_image = Image.open(self.image_path).convert('RGB')
                 self.get_image2 = self.get_image.resize((200, 200))
                 self.img = ImageTk.PhotoImage(self.get_image)
                 self.img2 = ImageTk.PhotoImage(self.get_image2)
@@ -66,7 +67,7 @@ class MyApp:
                 # create new filename as original filename
                 original_filename = os.path.basename(self.image_path)
                 new_filename = f"encrypted_{original_filename}"  # filename
-                self.full_save_path = os.path.join(self.location_path, new_filename)  #  filename path
+                self.full_save_path = os.path.join(self.location_path, new_filename)  # filename path
 
             except Exception as e:
                 print(f"Saved location is not set. {e}")
@@ -75,47 +76,59 @@ class MyApp:
         if not hasattr(self, 'get_image'):
             print("Select an image for encryption")
             return
+        if not self.full_save_path:
+            print("Select a location to save the encrypted image")
+            return
 
+        print("Encrypting...")
         pixels = self.get_image.load()
         width, height = self.get_image.size
-        
+
         random.seed(12345)
-        for _ in range(width * height * 5): 
+        self.swaps = []
+        for _ in range(width * height * 5):
             x1, y1 = random.randint(0, width - 1), random.randint(0, height - 1)
             x2, y2 = random.randint(0, width - 1), random.randint(0, height - 1)
+            self.swaps.append((x1, y1, x2, y2))
             pixels[x1, y1], pixels[x2, y2] = pixels[x2, y2], pixels[x1, y1]
 
         encrypted_image_path = self.full_save_path
-        self.get_image.save(encrypted_image_path)
-        self.save_to_label= Label(text=f"Encrypted image saved to: {encrypted_image_path}",font="Morpheus 10")
+        self.get_image.save(encrypted_image_path, format='PNG')
+        self.save_to_label = Label(text=f"Encrypted image saved to: {encrypted_image_path}", font="Morpheus 10")
         self.save_to_label.grid(row=4, column=1, pady=10, sticky="w")
-        
+        print("Done")
 
     def decrypt_image(self):
         if not hasattr(self, 'get_image'):
             print("Select an image for decryption.")
             return
+        if not self.location_path:
+            print("Select a location to save the decrypted image")
+            return
 
+        print("Decrypting...")
         pixels = self.get_image.load()
         width, height = self.get_image.size
 
-        random.seed(12345)  
+        random.seed(12345)
         swaps = []
         for _ in range(width * height * 5):
             x1, y1 = random.randint(0, width - 1), random.randint(0, height - 1)
             x2, y2 = random.randint(0, width - 1), random.randint(0, height - 1)
             swaps.append((x1, y1, x2, y2))
 
-        for x1, y1, x2, y2 in reversed(swaps):  
+        for x1, y1, x2, y2 in reversed(swaps):
             pixels[x1, y1], pixels[x2, y2] = pixels[x2, y2], pixels[x1, y1]
-            
-        decrypted_image_path = self.location_path + "/decrypted_image.png"
-        self.get_image.save(decrypted_image_path)
-        self.save_to_label= Label(text=f"Decrypted image saved to: {decrypted_image_path}",font="Morpheus 10")
+
+        decrypted_image_path = os.path.join(self.location_path, "decrypted_image.png")
+        self.get_image.save(decrypted_image_path, format='PNG')
+        self.save_to_label = Label(text=f"Decrypted image saved to: {decrypted_image_path}", font="Morpheus 10")
         self.save_to_label.grid(row=4, column=1, pady=10, sticky="w")
+        print("Done")
 
 if __name__ == "__main__":
     root = Tk()
     root.minsize(500, 400)
+    root.maxsize(1000, 1000)
     app = MyApp(root)
     root.mainloop()
