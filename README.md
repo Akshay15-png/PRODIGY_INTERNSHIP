@@ -53,3 +53,26 @@ This project is an image encryption tool developed as part of Task 02 assigned b
 ### Image
 
 ![Screenshot (80)](https://github.com/Akshay15-png/PRODIGY_INTERNSHIP/assets/93660973/d6d10042-5e43-4227-a4a0-d7ec44428210)
+
+### 3. Password Complexity Checker
+
+#### Description
+This project is a password complexity checker developed as part of an assignment by Prodigy Infotech. The tool allows users to assess the strength of a password based on various criteria such as length, presence of uppercase and lowercase letters, numbers, and special characters. Additionally, it checks if the password is present in a predefined wordlist and estimates the time it would take to crack the password using brute force methods. The graphical user interface, built with tkinter, makes it user-friendly and easy to navigate.
+
+#### Technologies Used
+- Python: The primary programming language used for developing the tool.
+- tkinter: A Python library used for creating the graphical user interface (GUI).
+- PIL (Pillow): A Python Imaging Library used for handling and displaying the logo image.
+- re: A module for regular expression matching operations.
+- os: A module for interacting with the operating system to handle file paths and directories.
+
+#### Features
+- Password Input and Display: Users can enter a password and check its complexity within the application.
+- Criteria-Based Complexity Assessment: The tool checks for the presence of uppercase letters, lowercase letters, numbers, and special characters in the password.
+- Time to Crack Estimation: The tool estimates the time required to crack the password based on its complexity.
+- Wordlist Check: The tool checks if the password is present in a predefined wordlist and adjusts the complexity assessment accordingly.
+- Feedback on Password Strength: The tool provides feedback on the password's strength, categorizing it as "Very Weak", "Weak", "Medium", "Strong", or "Out of the world".
+- User-Friendly Interface: The intuitive GUI allows users to easily navigate through the password complexity checking process, providing clear buttons and labels for each action.
+
+### Image
+![Password Complexity Checker 30-06-2024 01_27_51](https://github.com/Akshay15-png/PRODIGY_INTERNSHIP/assets/93660973/0a9a81a2-2636-47ab-848c-ec93e40f51d1)
