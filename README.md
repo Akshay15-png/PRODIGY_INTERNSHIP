@@ -1,6 +1,6 @@
 # Internship Projects At Prodigy InfoTech
 
-Internship Location: Prodigy Infotech, Mumbai, Maharashtra
+Internship Location: Remote
 
 Internship Duration: 15 June 2024 - 15 July 2024
 
