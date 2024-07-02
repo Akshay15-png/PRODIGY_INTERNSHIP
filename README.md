@@ -82,7 +82,7 @@ This project is a password complexity checker developed as part of an assignment
 #### Description
 This project is a keystroke logger developed to capture and log keystrokes from a keyboard in real-time. It records each keystroke, including special keys, and saves them to a text file (logs.txt). The script uses the Python keyboard library to capture keystrokes globally, allowing it to work across different applications and windows. Each keystroke is timestamped and logged with a human-readable representation for special keys to enhance clarity.
 
-####Technologies Used
+#### Technologies Used
 - Python: Primary programming language for capturing and logging keystrokes.
 - keyboard library: Python library for capturing keyboard events.
 - datetime: Python module for generating timestamps.
